@@ -1,12 +1,9 @@
 import {useEffect, useRef} from 'react';
 import {Dimensions, Platform, ReactNativeVersion} from 'react-native';
 
-const versionString = ReactNativeVersion.getVersionString();
-
-const versionAr = versionString?.split?.('.') ?? '';
-const msb = Number(versionAr[0]);
-const mid = Number(versionAr[1]);
-const lsb = Number(versionAr[2]);
+const msb = ReactNativeVersion.major;
+const mid = ReactNativeVersion.minor;
+const lsb = ReactNativeVersion.patch;
 
 export const rnVersion =
   (!isNaN(msb) ? msb : 0) * 1000000 +
