@@ -1,8 +1,7 @@
 import {useEffect, useRef} from 'react';
-import {Dimensions, Platform} from 'react-native';
+import {Dimensions, Platform, ReactNativeVersion} from 'react-native';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const versionString = require('react-native/package.json').version;
+const versionString = ReactNativeVersion.getVersionString();
 
 const versionAr = versionString?.split?.('.') ?? '';
 const msb = Number(versionAr[0]);
